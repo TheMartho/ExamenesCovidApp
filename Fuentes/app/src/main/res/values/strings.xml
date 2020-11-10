@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RegistrosCovidApp</string>
+    <string name="nombreLogin">Nombre:</string>
+    <string name="passwordLogin">Password:</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="centrar">250dp</dimen>
+    <dimen name="letraLogin">25dp</dimen>
+    <dimen name="margenLogo">20dp</dimen>
+    <dimen name="textoLogo">25dp</dimen>
+    <dimen name="dimensionesLogo">80dp</dimen>
+    <dimen name="letraVerPaciente">25dp</dimen>
+
+</resources>
