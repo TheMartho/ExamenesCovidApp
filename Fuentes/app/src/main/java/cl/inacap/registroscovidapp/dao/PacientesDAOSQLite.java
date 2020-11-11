@@ -40,6 +40,7 @@ public class PacientesDAOSQLite implements PacientesDAO{
                         p.setTemperatura(c.getDouble(6));
                         p.setPresentaTos(c.getString(7));
                         p.setPresionArterial(c.getInt(8));
+                        pacientes.add(p);
                     }while(c.moveToNext());
                 }
                 reader.close();
