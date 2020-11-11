@@ -6,5 +6,9 @@
     <dimen name="textoLogo">25dp</dimen>
     <dimen name="dimensionesLogo">80dp</dimen>
     <dimen name="letraVerPaciente">25dp</dimen>
+    <dimen name="marginBotonFloat">16dp</dimen>
+    <dimen name="margenSwitch">90dp</dimen>
+    <dimen name="margenBoton">20dp</dimen>
+    <dimen name="margin_boton_float">19dp</dimen>
 
 </resources>
