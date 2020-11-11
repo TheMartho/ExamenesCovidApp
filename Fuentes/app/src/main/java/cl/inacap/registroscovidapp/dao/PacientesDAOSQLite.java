@@ -27,7 +27,7 @@ public class PacientesDAOSQLite implements PacientesDAO{
             if(reader != null){
                 Cursor c = reader.rawQuery("SELECT rut,nombre,apellido,fechaExamen," +
                         "areaTrabajo,presentaSintomas,temperatura,presentaTos,presionArterial" +
-                        " FROM productos",null);
+                        " FROM pacientes",null);
                 if(c.moveToFirst()){
                     do{
                         Paciente p = new Paciente();

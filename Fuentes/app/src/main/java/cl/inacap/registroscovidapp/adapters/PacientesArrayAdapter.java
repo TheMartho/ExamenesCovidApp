@@ -48,7 +48,7 @@ public class PacientesArrayAdapter extends ArrayAdapter<Paciente> {
         sintomasCovidTv.setText(actual.getPresentaSintomas());
         presentaTosTv.setText(actual.getPresentaTos());
         temperaturaTv.setText(actual.getTemperatura()+"°");
-        presionArterialTv.setText(actual.getPresionArterial());
+        presionArterialTv.setText(actual.getPresionArterial()+"");
 
         return fila;
     }
