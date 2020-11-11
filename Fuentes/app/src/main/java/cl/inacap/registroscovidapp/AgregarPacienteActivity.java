@@ -1,5 +1,6 @@
 package cl.inacap.registroscovidapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -139,7 +140,7 @@ public class AgregarPacienteActivity extends AppCompatActivity {
                     pDAO.save(p);
                     startActivity(new Intent(AgregarPacienteActivity.this, VerPacienteActivity.class));
                 }else{
-                    Toast.makeText(AgregarPacienteActivity.this, "Ta Mal",Toast.LENGTH_SHORT).show();
+                    mostrarErrores(errores);
                 }
 
             }
@@ -202,6 +203,22 @@ public class AgregarPacienteActivity extends AppCompatActivity {
             esValido = false;
         }
         return esValido;
+    }
+
+    private void mostrarErrores(List<String> errores){
+        //1. Generar una cadena de texto con los errores
+        String mensaje="";
+        for(String e:errores){
+            mensaje+= "-" + e + "\n";
+        }
+        //2. Mostrar un mensaje de alerta
+        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(AgregarPacienteActivity.this);
+        alertBuilder
+                .setTitle("Error De Validacion")
+                .setMessage(mensaje)
+                .setPositiveButton("Aceptar",null)
+                .create()
+                .show();
     }
 
 }

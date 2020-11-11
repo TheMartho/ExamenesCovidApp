@@ -40,6 +40,13 @@ public class VerPacienteActivity extends AppCompatActivity {
                 startActivity(new Intent(VerPacienteActivity.this, AgregarPacienteActivity.class));
             }
         });
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         pacientes = pacientesDAO.getAll();
         if(pacientes!=null){
             adaptador = new PacientesArrayAdapter(this,R.layout.ver_pacientes_list,pacientes);
@@ -48,12 +55,6 @@ public class VerPacienteActivity extends AppCompatActivity {
         }else{
             Toast.makeText(VerPacienteActivity.this, "Ta Mal",Toast.LENGTH_SHORT).show();
         }
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
 
     }
 
