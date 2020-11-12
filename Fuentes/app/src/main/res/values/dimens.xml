@@ -10,5 +10,6 @@
     <dimen name="margenSwitch">90dp</dimen>
     <dimen name="margenBoton">20dp</dimen>
     <dimen name="margin_boton_float">19dp</dimen>
+    <dimen name="margenTop">15dp</dimen>
 
 </resources>

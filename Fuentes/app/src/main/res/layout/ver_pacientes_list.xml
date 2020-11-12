@@ -1,215 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:background="@color/colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:orientation="horizontal">
-    <TextView
-        android:layout_width="match_parent"
-        android:textSize="@dimen/letraVerPaciente"
-        android:layout_weight="1"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
-        android:textAlignment="center"
-        android:text="R.U.T:"
-        android:layout_height="wrap_content">
-    </TextView>
 
     <TextView
-        android:layout_weight="1"
         android:textSize="@dimen/letraVerPaciente"
-        android:id="@+id/rut_paci_lv"
+        android:id="@+id/paciente_to_string"
+        android:textColor="@color/letraNegra"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+
     </TextView>
-
-</LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/advertencia"
         android:layout_weight="1"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="match_parent"
-            android:textSize="@dimen/letraVerPaciente"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textAlignment="center"
-            android:text="Nombre y Apellido:"
-            android:layout_height="wrap_content">
-        </TextView>
-
-        <TextView
-            android:layout_weight="1"
-            android:id="@+id/nombres_paci_lv"
-            android:textSize="@dimen/letraVerPaciente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </TextView>
-
-    </LinearLayout>
-
-    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textAlignment="center"
-            android:textSize="@dimen/letraVerPaciente"
-            android:text="Fecha Examen:"
-            android:layout_height="wrap_content">
-        </TextView>
-
-        <TextView
-            android:layout_weight="1"
-            android:id="@+id/fecha_paci_lv"
-            android:textSize="@dimen/letraVerPaciente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </TextView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="@dimen/letraVerPaciente"
-            android:textColor="@color/colorPrimaryDark"
-            android:textAlignment="center"
-            android:text="Area De Trabajo:"
-            android:layout_height="wrap_content">
-        </TextView>
-
-        <TextView
-            android:layout_weight="1"
-            android:id="@+id/area_trabajo_paci_lv"
-            android:textSize="@dimen/letraVerPaciente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </TextView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="@dimen/letraVerPaciente"
-            android:textColor="@color/colorPrimaryDark"
-            android:textAlignment="center"
-            android:text="¿Presenta síntomas de covid?:"
-            android:layout_height="wrap_content">
-        </TextView>
-
-        <TextView
-            android:layout_weight="1"
-            android:id="@+id/sintomas_paci_lv"
-            android:layout_width="match_parent"
-            android:textSize="@dimen/letraVerPaciente"
-            android:layout_height="wrap_content">
-        </TextView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="@dimen/letraVerPaciente"
-            android:textColor="@color/colorPrimaryDark"
-            android:textAlignment="center"
-            android:text="¿Presenta tos?:"
-            android:layout_height="wrap_content">
-        </TextView>
-
-        <TextView
-            android:layout_weight="1"
-            android:id="@+id/presenta_tos_paci_lv"
-            android:textSize="@dimen/letraVerPaciente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </TextView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:textSize="@dimen/letraVerPaciente"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textAlignment="center"
-            android:text="Temperatura:"
-            android:layout_height="wrap_content">
-        </TextView>
-
-        <TextView
-            android:layout_weight="1"
-            android:id="@+id/temperatura__paci_lv"
-            android:textSize="@dimen/letraVerPaciente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </TextView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="@dimen/letraVerPaciente"
-            android:textColor="@color/colorPrimaryDark"
-            android:textAlignment="center"
-            android:text="Presión Arterial:"
-            android:layout_height="wrap_content">
-        </TextView>
-
-        <TextView
-            android:layout_weight="1"
-            android:id="@+id/presion_paci_lv"
-            android:layout_width="match_parent"
-            android:textSize="@dimen/letraVerPaciente"
-            android:layout_height="wrap_content">
-        </TextView>
-
-    </LinearLayout>
-
+        android:layout_height="match_parent"></ImageView>
 </LinearLayout>

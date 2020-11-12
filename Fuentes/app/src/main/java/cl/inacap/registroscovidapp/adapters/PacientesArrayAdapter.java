@@ -2,10 +2,12 @@ package cl.inacap.registroscovidapp.adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,25 +33,13 @@ public class PacientesArrayAdapter extends ArrayAdapter<Paciente> {
 
         LayoutInflater inflater = this.activity.getLayoutInflater();
         View fila = inflater.inflate(R.layout.ver_pacientes_list,null,true);
-        TextView rutTv = fila.findViewById(R.id.rut_paci_lv);
-        TextView nombresTv = fila.findViewById(R.id.nombres_paci_lv);
-        TextView fechaTv = fila.findViewById(R.id.fecha_paci_lv);
-        TextView areaTrabajoTv = fila.findViewById(R.id.area_trabajo_paci_lv);
-        TextView sintomasCovidTv = fila.findViewById(R.id.sintomas_paci_lv);
-        TextView presentaTosTv = fila.findViewById(R.id.presenta_tos_paci_lv);
-        TextView temperaturaTv = fila.findViewById(R.id.temperatura__paci_lv);
-        TextView presionArterialTv = fila.findViewById(R.id.presion_paci_lv);
-
+        TextView toStringPaciente = fila.findViewById(R.id.paciente_to_string);
+        ImageView advertencia = fila.findViewById(R.id.advertencia);
         Paciente actual = pacientes.get(position);
-        rutTv.setText(actual.getRutPaciente());
-        nombresTv.setText(actual.getNombre() + " " + actual.getApellido());
-        fechaTv.setText(actual.getFechaExamen());
-        areaTrabajoTv.setText(actual.getAreaTrabajo());
-        sintomasCovidTv.setText(actual.getPresentaSintomas());
-        presentaTosTv.setText(actual.getPresentaTos());
-        temperaturaTv.setText(actual.getTemperatura()+"°");
-        presionArterialTv.setText(actual.getPresionArterial()+"");
-
+        toStringPaciente.setText(actual.toString());
+        if (actual.getPresentaSintomas().equalsIgnoreCase("sí")){
+            advertencia.setImageResource(R.drawable.ic_baseline_warning_24);
+        }
         return fila;
     }
 }

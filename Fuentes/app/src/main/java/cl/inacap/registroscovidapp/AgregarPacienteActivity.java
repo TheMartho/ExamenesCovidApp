@@ -2,6 +2,7 @@ package cl.inacap.registroscovidapp;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -13,10 +14,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
-import android.widget.Toast;
+
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -38,14 +38,26 @@ public class AgregarPacienteActivity extends AppCompatActivity {
     private Switch switchSintomasCovid;
     private EditText temperaturaTxt;
     private Switch switchPresentaTos;
+    private Toolbar toolbar;
     private EditText presionArterialTxt;
     private Button agregarPacienteBtn;
     private PacientesDAO pDAO = new PacientesDAOSQLite(this);
 
     @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_paciente);
+        this.toolbar = findViewById(R.id.toolbar);
+        this.setSupportActionBar(this.toolbar);
+        //Permite ir hacia atras
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //MUESTRA EL ICONO
+        this.getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         this.rutPacienteTxt = findViewById(R.id.rut_paci);
         this.nombreTxt=findViewById(R.id.nombre_paci);
@@ -89,24 +101,27 @@ public class AgregarPacienteActivity extends AppCompatActivity {
                 }else{
                     sintomasCovidStr="No";
                 }
-                if(temperaturaStr==null){
+                double temperaturaDou=0;
+                if(temperaturaStr.isEmpty()){
                     errores.add("Debe Ingresar Una Temperatura");
                 }else{
-                    double temperaturaDou = Double.parseDouble(temperaturaStr);
+                    temperaturaDou = Double.parseDouble(temperaturaStr);
+                    if(temperaturaDou<20.1){
+                        errores.add("La teperatura debe ser mayor que 20°");
+                    }
                 }
-                double temperaturaDou = Double.parseDouble(temperaturaTxt.getText().toString().trim());
                 String presentaTosStr = "";
                 if(switchPresentaTos.isChecked()){
                     presentaTosStr="Sí";
                 }else {
                     presentaTosStr="No";
                 }
-                if (presionArterialStr==null){
+                int presionArterial=0;
+                if (presionArterialStr.isEmpty()){
                     errores.add("Debe Ingresar La Presion Arterial");
                 }else {
-                    int presionArterial=Integer.parseInt(presionArterialStr);
+                    presionArterial=Integer.parseInt(presionArterialStr);
                 }
-                int presionArterial=Integer.parseInt(presionArterialTxt.getText().toString().trim());
 
                 if(verificarRut(rutStr)==false){
                     errores.add("El Rut No Es Valido");
@@ -138,7 +153,7 @@ public class AgregarPacienteActivity extends AppCompatActivity {
                     p.setPresentaTos(presentaTosStr);
                     p.setPresionArterial(presionArterial);
                     pDAO.save(p);
-                    startActivity(new Intent(AgregarPacienteActivity.this, VerPacienteActivity.class));
+                    startActivity(new Intent(AgregarPacienteActivity.this, PrincipalActivity.class));
                 }else{
                     mostrarErrores(errores);
                 }

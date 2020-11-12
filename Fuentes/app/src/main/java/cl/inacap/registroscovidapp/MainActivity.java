@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (proseguir==2){
                     //A LA SIGUIENTE ACTIVITY
-                    Intent intent = new Intent(MainActivity.this, VerPacienteActivity.class);
+                    Intent intent = new Intent(MainActivity.this, PrincipalActivity.class);
                     startActivity(intent);
 
                 }

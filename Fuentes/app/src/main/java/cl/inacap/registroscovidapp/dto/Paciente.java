@@ -85,4 +85,13 @@ public class Paciente {
     public void setPresionArterial(int presionArterial) {
         this.presionArterial = presionArterial;
     }
+
+
+    @Override
+    public String toString() {
+        return "Rut: "+rutPaciente+"\n"
+                +"Nombre: "+nombre+"\n"
+                +"Apellido: "+apellido+"\n"
+                +"Fecha de Examen: "+fechaExamen+"\n";
+    }
 }

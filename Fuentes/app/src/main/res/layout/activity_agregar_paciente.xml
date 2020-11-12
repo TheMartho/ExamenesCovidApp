@@ -13,6 +13,7 @@
         layout="@layout/toolbar"
         ></include>
 
+
     <TextView
         android:layout_width="match_parent"
         android:text="AGREGAR PACIENTE"
@@ -244,5 +245,6 @@
         android:text="Agregar"
         android:textStyle="bold"
         android:layout_height="wrap_content"></Button>
+
 
 </LinearLayout>
