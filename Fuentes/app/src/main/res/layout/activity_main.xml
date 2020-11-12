@@ -25,7 +25,6 @@
         <EditText
             android:id="@+id/nombre"
             android:background="@drawable/edittext_borde_azul_background"
-            android:hint="Ejemplo: 12345678-9"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></EditText>
